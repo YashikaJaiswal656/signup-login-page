@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main {
+            height: 500px;
+            width: 400px;
+            box-shadow: 1px 2px 10px 3px lavender;
+
+
+        }
+
+        form {
+            height: 100%;
+            width: 100%;
+            display: flex;
+
+            align-items: center;
+            flex-direction: column;
+        }
+
+        input {
+            height: 40px;
+
+            width: 100%;
+            border: 2px solid rgb(196, 194, 194);
+
+        }
+
+        label {
+            font-size: 20px;
+
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: rgb(136, 133, 133);
+            font-weight: 100;
+
+        }
+
+        .text {
+            height: 80px;
+            width: 80%;
+            margin-top: 20px;
+        }
+
+        button {
+            height: 40px;
+            width: 100%;
+            color: white;
+            background-color: #3498db;
+            border: 0px;
+            border-radius: 5px;
+        }
+
+        h1 {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 28px;
+            color: rgb(105, 104, 104);
+            margin-bottom: 35px;
+
+
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .display {
+            display: block;
+            width: 80%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="main">
+
+            <form action="">
+
+                <h1 class="para"></h1>
+                <div class="text contain">
+                    <label for=""> First name</label>
+                    <input type="text">
+
+                </div>
+
+                <div class="text contain2">
+                    <label for=""> Last name</label>
+                    <input type="text">
+
+                </div>
+                <div class="text contain3">
+                    <label for="">Email</label>
+                    <input type="email">
+
+                </div>
+
+
+                <div class="text name">
+                    <label for="">User Name</label><br>
+                    <input type="text" id="name">
+
+                </div>
+
+                <div class="text">
+                    <label for="">Password</label>
+                    <input type="password" id="password">
+                </div>
+
+
+                <div class="text">
+                    <button class="button">login</button>
+                </div>
+                <a href="#" class="anc"></a>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let form=true;
+        fifo=()=>{
+            
+        let heading = (form == true) ? "welcome to login page" : "welcome to signup page"
+        document.querySelector(".para").textContent = heading;
+        let btn = (form == true) ? "login" : "signup";
+        document.querySelector(".button").textContent = btn
+        let pass = (form == true) ? "hide" : "display"
+        document.querySelector(".contain").className = `contain ${pass}`;
+        document.querySelector(".contain2").className =  `contain2 ${pass}`;
+        document.querySelector(".contain3").className =  `contain3 ${pass}`;
+        let anch = (form == true) ? "make a new account" : "already have an account"
+        document.querySelector(".anc").textContent = anch;
+        let data = (form == true) ? "display" : "hide"
+        document.querySelector(".name").className =  `name ${data}`;
+
+        }
+        
+        lifo=()=>{
+            document.querySelector(".anc").addEventListener("click" , ()=>{
+                form= !form;
+                fifo()
+            })
+            
+        }
+        lifo()
+        fifo()
+        </script>
+</body>
+
+</html>
